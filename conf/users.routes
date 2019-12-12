@@ -1,0 +1,7 @@
+
+#Users
+
+POST    /                     com.example.users.controller.UserController.createOrUpdateUser(request: Request)
+GET     /                     com.example.users.controller.UserController.users
+GET     /:userName            com.example.users.controller.UserController.user(userName: String)
+DELETE  /:userName            com.example.users.controller.UserController.deleteUser(userName: String)

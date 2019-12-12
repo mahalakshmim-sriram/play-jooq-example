@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.11.5.xsd">
+    <jdbc>
+        <driver>org.postgresql.Driver</driver>
+        <url>jdbc:postgresql://localhost:5432/example</url>
+        <user>example</user>
+        <password>password</password>
+    </jdbc>
+    <generator>
+        <name>org.jooq.codegen.JavaGenerator</name>
+        <database>
+            <name>org.jooq.meta.postgres.PostgresDatabase</name>
+            <inputSchema>public</inputSchema>
+            <includes>.*</includes>
+            <excludes>
+                FLYWAY_SCHEMA_HISTORY
+            </excludes>
+        </database>
+        <target>
+            <packageName>com.example.models</packageName>
+            <directory>app</directory>
+        </target>
+        <generate>
+            <deprecated>false</deprecated>
+            <daos>true</daos>
+            <interfaces>true</interfaces>
+            <immutablePojos>true</immutablePojos>
+            <validationAnnotations>true</validationAnnotations>
+            <globalObjectReferences>false</globalObjectReferences>
+            <javaTimeTypes>true</javaTimeTypes>
+            <!-- Generate basic equals() and hashCode() methods in POJOs -->
+            <pojosEqualsAndHashCode>true</pojosEqualsAndHashCode>
+        </generate>
+    </generator>
+</configuration>
